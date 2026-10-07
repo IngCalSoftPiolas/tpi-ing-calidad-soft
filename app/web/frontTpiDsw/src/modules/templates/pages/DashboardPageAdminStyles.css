@@ -1,0 +1,16 @@
+.grid-areas-mobile {
+  grid-template-areas:
+    "header header"
+    "content content";
+}
+
+/* Soporta el uso de la clase responsive "sm:grid-areas-desktop" desde el HTML:
+   en CSS el selector con ":" debe escaparse como "\:" o envolverlo en una media query */
+@media (min-width: 640px) {
+  .sm\:grid-areas-desktop,
+  .grid-areas-desktop {
+    grid-template-areas:
+      "header header"
+      "sidebar content";
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "email": "juan.perez@example.com",
+    "name": "Juan Pérez",
+    "phoneNumber": "3811234567"
+  },
+  {
+    "email": "ana.gomez@example.com",
+    "name": "Ana Gómez",
+    "phoneNumber": "3817654321"
+  },
+  {
+    "email": "carlos.rodriguez@example.com",
+    "name": "Carlos Rodríguez",
+    "phoneNumber": "3874567890"
+  },
+  {
+    "email": "maria.lopez@example.com",
+    "name": "María López",
+    "phoneNumber": "3871122334"
+  },
+  {
+    "email": "lucas.martinez@example.com",
+    "name": "Lucas Martínez",
+    "phoneNumber": "3819988776"
+  },
+  {
+    "email": "camila.fernandez@example.com",
+    "name": "Camila Fernández",
+    "phoneNumber": "3813344556"
+  },
+  {
+    "email": "diego.garcia@example.com",
+    "name": "Diego García",
+    "phoneNumber": "3877788990"
+  },
+  {
+    "email": "valentina.ramos@example.com",
+    "name": "Valentina Ramos",
+    "phoneNumber": "3872211445"
+  },
+  {
+    "email": "martin.sosa@example.com",
+    "name": "Martín Sosa",
+    "phoneNumber": "3815566778"
+  },
+  {
+    "email": "florencia.alvarez@example.com",
+    "name": "Florencia Álvarez",
+    "phoneNumber": "3811122443"
+  }
+]

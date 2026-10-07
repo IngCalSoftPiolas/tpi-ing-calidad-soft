@@ -1,0 +1,21 @@
+.home-page-desktop {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  width: 100%;
+    background-color: #f3f4f6; /* complement for projects not using Tailwind colors */
+}
+
+.home-page-desktop main {
+  overflow: auto; /* complement for projects not using Tailwind spacing */
+}
+
+.home-page-mobile {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+    background-color: #f3f4f6; /* complement for projects not using Tailwind colors */
+}
+
+

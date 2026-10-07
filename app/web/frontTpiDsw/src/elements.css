@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer base {
+  button {
+    @apply border-blue-100 border-solid border bg-blue-200 p-1 cursor-pointer rounded-md shadow hover:shadow-md hover:bg-blue-300 focus:outline-none focus:ring-1 focus:ring-blue-100 active:scale-95;
+  }
+
+  .input-default {
+    @apply border border-gray-200 rounded-md p-1.5 hover:shadow focus:border-blue-200 focus:outline-none focus:ring-1 focus:ring-blue-100;
+  }
+
+  .page-default{
+    @apply flex flex-col justify-center h-[100dvh] bg-neutral-100  sm:items-center;
+  }
+}
