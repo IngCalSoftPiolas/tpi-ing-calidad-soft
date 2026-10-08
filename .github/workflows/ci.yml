@@ -48,3 +48,10 @@ jobs:
           name: api-artifact
           path: app/server/Dsw2025Tpi/artifacts/api
           retention-days: 7
+
+      - name: Construir imagen Docker
+        if: hashFiles('app/server/**/Dockerfile') != ''
+        run: |
+          DOCKERFILE=$(find "${{ github.workspace }}/app/server" -name Dockerfile -print -quit)
+          echo "Dockerfile encontrado: $DOCKERFILE"
+          docker build -f "$DOCKERFILE" -t tpi-api:ci "$(dirname "$DOCKERFILE")"
