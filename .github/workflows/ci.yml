@@ -34,3 +34,17 @@ jobs:
 
       - name: Compilar solución
         run: dotnet build Dsw2025Tpi.sln --configuration Release --no-restore
+
+      - name: Ejecutar pruebas unitarias
+        if: hashFiles('**/*Tests*.csproj', '**/*Test*.csproj') != ''
+        run: dotnet test Dsw2025Tpi.sln --configuration Release --no-build
+
+      - name: Publicar artefacto de la API
+        run: dotnet publish Dsw2025Tpi.Api/Dsw2025Tpi.Api.csproj --configuration Release --no-build --output artifacts/api
+
+      - name: Subir artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-artifact
+          path: app/server/Dsw2025Tpi/artifacts/api
+          retention-days: 7
