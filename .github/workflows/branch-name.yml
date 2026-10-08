@@ -13,6 +13,12 @@ jobs:
       - name: Verificar prefijo
         run: |
           BRANCH_NAME="${{ github.head_ref }}"
+          
+          if [[ "$BRANCH_NAME" == "main" || "$BRANCH_NAME" == "development" ]]; then
+            echo "Sincronización entre ramas principales permitida."
+            exit 0
+          fi
+          
           if [[ ! $BRANCH_NAME =~ ^(feature|hotfix)/ ]]; then
             echo "Error: La rama '$BRANCH_NAME' no es válida."
             echo "Debe empezar obligatoriamente con feature/ o hotfix/"
