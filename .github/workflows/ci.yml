@@ -17,3 +17,20 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/server/Dsw2025Tpi
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restaurar paquetes
+        run: dotnet restore Dsw2025Tpi.sln
+
+      - name: Compilar solución
+        run: dotnet build Dsw2025Tpi.sln --configuration Release --no-restore
