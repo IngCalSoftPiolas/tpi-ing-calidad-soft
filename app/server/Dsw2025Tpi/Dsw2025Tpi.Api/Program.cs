@@ -116,7 +116,7 @@ public class Program
                     {
                         context.Response.StatusCode = StatusCodes.Status403Forbidden;
                         context.Response.ContentType = "application/json";
-                        return context.Response.WriteAsync("{\"error\": \"No ten�s permisos para acceder a este recurso.\"}");
+                        return context.Response.WriteAsync("{\"error\": \"No tenes permisos para acceder a este recurso.\"}");
                     },
                     OnChallenge = context =>
                     {
@@ -125,15 +125,15 @@ public class Program
                         context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                         context.Response.ContentType = "application/json";
 
-                        // �Expir� el token?
+                        // Expiró el token?
                         var expired = context.AuthenticateFailure is SecurityTokenExpiredException;
 
                         if (expired)
                         {
-                            return context.Response.WriteAsync("{\"error\": \"Tu sesi�n ha expirado. Volv� a iniciar sesi�n.\"}");
+                            return context.Response.WriteAsync("{\"error\": \"Tu sesión ha expirado. Volvé a iniciar sesión.\"}");
                         }
 
-                        return context.Response.WriteAsync("{\"error\": \"No autorizado. Token inv�lido o inexistente.\"}");
+                        return context.Response.WriteAsync("{\"error\": \"No autorizado. Token inválido o inexistente.\"}");
                     },
                 };
             });
@@ -215,7 +215,7 @@ public class Program
 
             foreach (var role in roles)
             {
-                // Como no podemos usar await aqu�, usamos .GetAwaiter().GetResult()
+                // Como no podemos usar await aquí, usamos .GetAwaiter().GetResult()
                 if (!roleManager.RoleExistsAsync(role).GetAwaiter().GetResult())
                 {
                     roleManager.CreateAsync(new IdentityRole(role)).GetAwaiter().GetResult();
