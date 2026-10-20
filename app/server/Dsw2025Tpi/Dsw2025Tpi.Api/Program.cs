@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using Microsoft.AspNetCore.HttpOverrides;
 namespace Dsw2025Tpi.Api;
 
 public class Program
@@ -115,7 +116,7 @@ public class Program
                     {
                         context.Response.StatusCode = StatusCodes.Status403Forbidden;
                         context.Response.ContentType = "application/json";
-                        return context.Response.WriteAsync("{\"error\": \"No tenés permisos para acceder a este recurso.\"}");
+                        return context.Response.WriteAsync("{\"error\": \"No tenes permisos para acceder a este recurso.\"}");
                     },
                     OnChallenge = context =>
                     {
@@ -124,15 +125,15 @@ public class Program
                         context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                         context.Response.ContentType = "application/json";
 
-                        // ¿Expiró el token?
+                        // ExpirÃ³ el token?
                         var expired = context.AuthenticateFailure is SecurityTokenExpiredException;
 
                         if (expired)
                         {
-                            return context.Response.WriteAsync("{\"error\": \"Tu sesión ha expirado. Volvé a iniciar sesión.\"}");
+                            return context.Response.WriteAsync("{\"error\": \"Tu sesiÃ³n ha expirado. VolvÃ© a iniciar sesiÃ³n.\"}");
                         }
 
-                        return context.Response.WriteAsync("{\"error\": \"No autorizado. Token inválido o inexistente.\"}");
+                        return context.Response.WriteAsync("{\"error\": \"No autorizado. Token invÃ¡lido o inexistente.\"}");
                     },
                 };
             });
@@ -145,7 +146,12 @@ public class Program
             options.UseSqlServer(builder.Configuration.GetConnectionString("Dsw2025TpiEntities"));
         });
 
-        
+        builder.Services.Configure<ForwardedHeadersOptions>(options =>
+        {
+            options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+            options.KnownNetworks.Clear();
+            options.KnownProxies.Clear();
+        });
 
         var app = builder.Build();
         //Agrego los clientes a la db
@@ -155,13 +161,15 @@ public class Program
             context.Seedwork<Customer>("Resources/clients.json");
         }
 
+        app.UseForwardedHeaders();
+
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
-            app.UseSwagger();
-            app.UseSwaggerUI();
         }
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
         app.UseExceptionHandler(errorApp =>
         {
@@ -207,7 +215,7 @@ public class Program
 
             foreach (var role in roles)
             {
-                // Como no podemos usar await aquí, usamos .GetAwaiter().GetResult()
+                // Como no podemos usar await aquÃ­, usamos .GetAwaiter().GetResult()
                 if (!roleManager.RoleExistsAsync(role).GetAwaiter().GetResult())
                 {
                     roleManager.CreateAsync(new IdentityRole(role)).GetAwaiter().GetResult();

@@ -1,0 +1,57 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - development
+      - main
+  pull_request:
+    branches:
+      - development
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/server/Dsw2025Tpi
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restaurar paquetes
+        run: dotnet restore Dsw2025Tpi.sln
+
+      - name: Compilar solución
+        run: dotnet build Dsw2025Tpi.sln --configuration Release --no-restore
+
+      - name: Ejecutar pruebas unitarias
+        if: hashFiles('**/*Tests*.csproj', '**/*Test*.csproj') != ''
+        run: dotnet test Dsw2025Tpi.sln --configuration Release --no-build
+
+      - name: Publicar artefacto de la API
+        run: dotnet publish Dsw2025Tpi.Api/Dsw2025Tpi.Api.csproj --configuration Release --no-build --output artifacts/api
+
+      - name: Subir artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-artifact
+          path: app/server/Dsw2025Tpi/artifacts/api
+          retention-days: 7
+
+      - name: Construir imagen Docker
+        if: hashFiles('app/server/**/Dockerfile') != ''
+        run: |
+          DOCKERFILE=$(find "${{ github.workspace }}/app/server" -name Dockerfile -print -quit)
+          echo "Dockerfile encontrado: $DOCKERFILE"
+          docker build -f "$DOCKERFILE" -t tpi-api:ci "$(dirname "$DOCKERFILE")"
