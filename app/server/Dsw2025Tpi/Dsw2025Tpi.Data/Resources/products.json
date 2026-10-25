@@ -1,0 +1,1037 @@
+[
+  {
+    "sku": "ELE-0001",
+    "internalCode": "INT-ELE001",
+    "name": "Auriculares Bluetooth",
+    "description": "Inalámbricos con cancelación de ruido",
+    "currentUnitPrice": 41250.0,
+    "stockQuantity": 175,
+    "isActive": false
+  },
+  {
+    "sku": "ELE-0002",
+    "internalCode": "INT-ELE002",
+    "name": "Parlante portátil",
+    "description": "Resistente al agua, 12 h de batería",
+    "currentUnitPrice": 41400.0,
+    "stockQuantity": 150,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0003",
+    "internalCode": "INT-ELE003",
+    "name": "Smartwatch deportivo",
+    "description": "Monitor cardíaco y GPS integrado",
+    "currentUnitPrice": 108000.0,
+    "stockQuantity": 165,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0004",
+    "internalCode": "INT-ELE004",
+    "name": "Mouse inalámbrico",
+    "description": "Sensor óptico 1600 DPI",
+    "currentUnitPrice": 15200.0,
+    "stockQuantity": 120,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0005",
+    "internalCode": "INT-ELE005",
+    "name": "Teclado mecánico",
+    "description": "Switches azules, retroiluminado RGB",
+    "currentUnitPrice": 63500.0,
+    "stockQuantity": 20,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0006",
+    "internalCode": "INT-ELE006",
+    "name": "Monitor 24 pulgadas",
+    "description": "Full HD IPS 75 Hz",
+    "currentUnitPrice": 190800.0,
+    "stockQuantity": 30,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0007",
+    "internalCode": "INT-ELE007",
+    "name": "Webcam HD",
+    "description": "1080p con micrófono incorporado",
+    "currentUnitPrice": 35100.0,
+    "stockQuantity": 65,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0008",
+    "internalCode": "INT-ELE008",
+    "name": "Cargador rápido USB-C",
+    "description": "Potencia de 30 W",
+    "currentUnitPrice": 11800.0,
+    "stockQuantity": 30,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0009",
+    "internalCode": "INT-ELE009",
+    "name": "Power bank 10000 mAh",
+    "description": "Doble salida USB",
+    "currentUnitPrice": 19900.0,
+    "stockQuantity": 195,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0010",
+    "internalCode": "INT-ELE010",
+    "name": "Pendrive 64 GB",
+    "description": "USB 3.0 de alta velocidad",
+    "currentUnitPrice": 8700.0,
+    "stockQuantity": 160,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0011",
+    "internalCode": "INT-ELE011",
+    "name": "Disco SSD 500 GB",
+    "description": "SATA III, lectura 550 MB/s",
+    "currentUnitPrice": 61150.0,
+    "stockQuantity": 60,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0012",
+    "internalCode": "INT-ELE012",
+    "name": "Router WiFi 6",
+    "description": "Doble banda, cobertura amplia",
+    "currentUnitPrice": 98950.0,
+    "stockQuantity": 5,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0013",
+    "internalCode": "INT-ELE013",
+    "name": "Tablet 10 pulgadas",
+    "description": "64 GB de almacenamiento",
+    "currentUnitPrice": 274250.0,
+    "stockQuantity": 200,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0014",
+    "internalCode": "INT-ELE014",
+    "name": "Cable HDMI 2 m",
+    "description": "Soporta resolución 4K",
+    "currentUnitPrice": 6300.0,
+    "stockQuantity": 145,
+    "isActive": true
+  },
+  {
+    "sku": "ELE-0015",
+    "internalCode": "INT-ELE015",
+    "name": "Hub USB 4 puertos",
+    "description": "USB 3.0 compacto",
+    "currentUnitPrice": 11200.0,
+    "stockQuantity": 5,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0001",
+    "internalCode": "INT-HOG001",
+    "name": "Cafetera de filtro",
+    "description": "Capacidad 12 tazas",
+    "currentUnitPrice": 50750.0,
+    "stockQuantity": 170,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0002",
+    "internalCode": "INT-HOG002",
+    "name": "Pava eléctrica",
+    "description": "Acero inoxidable, 1.7 litros",
+    "currentUnitPrice": 27500.0,
+    "stockQuantity": 35,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0003",
+    "internalCode": "INT-HOG003",
+    "name": "Licuadora",
+    "description": "600 W con vaso de vidrio",
+    "currentUnitPrice": 43400.0,
+    "stockQuantity": 10,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0004",
+    "internalCode": "INT-HOG004",
+    "name": "Tostadora",
+    "description": "2 ranuras, 7 niveles",
+    "currentUnitPrice": 26250.0,
+    "stockQuantity": 40,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0005",
+    "internalCode": "INT-HOG005",
+    "name": "Juego de sábanas",
+    "description": "Dos plazas, algodón 180 hilos",
+    "currentUnitPrice": 32100.0,
+    "stockQuantity": 115,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0006",
+    "internalCode": "INT-HOG006",
+    "name": "Almohada viscoelástica",
+    "description": "Con memoria de forma",
+    "currentUnitPrice": 23800.0,
+    "stockQuantity": 185,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0007",
+    "internalCode": "INT-HOG007",
+    "name": "Set de ollas",
+    "description": "5 piezas antiadherentes",
+    "currentUnitPrice": 88000.0,
+    "stockQuantity": 85,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0008",
+    "internalCode": "INT-HOG008",
+    "name": "Lámpara de escritorio",
+    "description": "LED con brazo articulado",
+    "currentUnitPrice": 17750.0,
+    "stockQuantity": 180,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0009",
+    "internalCode": "INT-HOG009",
+    "name": "Ventilador de pie",
+    "description": "3 velocidades, 40 cm",
+    "currentUnitPrice": 52300.0,
+    "stockQuantity": 100,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0010",
+    "internalCode": "INT-HOG010",
+    "name": "Aspiradora de mano",
+    "description": "Inalámbrica y recargable",
+    "currentUnitPrice": 80550.0,
+    "stockQuantity": 170,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0011",
+    "internalCode": "INT-HOG011",
+    "name": "Toallón",
+    "description": "Algodón 500 g/m2",
+    "currentUnitPrice": 13700.0,
+    "stockQuantity": 145,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0012",
+    "internalCode": "INT-HOG012",
+    "name": "Set de cuchillos",
+    "description": "6 piezas con soporte",
+    "currentUnitPrice": 32600.0,
+    "stockQuantity": 20,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0013",
+    "internalCode": "INT-HOG013",
+    "name": "Mate de calabaza",
+    "description": "Forrado en cuero",
+    "currentUnitPrice": 8400.0,
+    "stockQuantity": 180,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0014",
+    "internalCode": "INT-HOG014",
+    "name": "Termo 1 litro",
+    "description": "Acero inoxidable, pico cebador",
+    "currentUnitPrice": 38050.0,
+    "stockQuantity": 185,
+    "isActive": true
+  },
+  {
+    "sku": "HOG-0015",
+    "internalCode": "INT-HOG015",
+    "name": "Organizador de cajones",
+    "description": "Set de 4 bandejas",
+    "currentUnitPrice": 7500.0,
+    "stockQuantity": 105,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0001",
+    "internalCode": "INT-DEP001",
+    "name": "Pelota de fútbol",
+    "description": "Número 5, cosida a mano",
+    "currentUnitPrice": 27150.0,
+    "stockQuantity": 75,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0002",
+    "internalCode": "INT-DEP002",
+    "name": "Colchoneta de yoga",
+    "description": "Antideslizante, 6 mm",
+    "currentUnitPrice": 18100.0,
+    "stockQuantity": 170,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0003",
+    "internalCode": "INT-DEP003",
+    "name": "Mancuernas 5 kg",
+    "description": "Par con recubrimiento de goma",
+    "currentUnitPrice": 31700.0,
+    "stockQuantity": 95,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0004",
+    "internalCode": "INT-DEP004",
+    "name": "Soga para saltar",
+    "description": "Rulemanes y mango de goma",
+    "currentUnitPrice": 6600.0,
+    "stockQuantity": 85,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0005",
+    "internalCode": "INT-DEP005",
+    "name": "Botella deportiva",
+    "description": "750 ml libre de BPA",
+    "currentUnitPrice": 8750.0,
+    "stockQuantity": 90,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0006",
+    "internalCode": "INT-DEP006",
+    "name": "Raqueta de pádel",
+    "description": "Carbono, peso medio",
+    "currentUnitPrice": 134750.0,
+    "stockQuantity": 175,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0007",
+    "internalCode": "INT-DEP007",
+    "name": "Pelotas de tenis",
+    "description": "Tubo por 3 unidades",
+    "currentUnitPrice": 11100.0,
+    "stockQuantity": 85,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0008",
+    "internalCode": "INT-DEP008",
+    "name": "Bicicleta fija",
+    "description": "Resistencia magnética regulable",
+    "currentUnitPrice": 400800.0,
+    "stockQuantity": 180,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0009",
+    "internalCode": "INT-DEP009",
+    "name": "Guantes de boxeo",
+    "description": "12 oz de cuero sintético",
+    "currentUnitPrice": 35100.0,
+    "stockQuantity": 45,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0010",
+    "internalCode": "INT-DEP010",
+    "name": "Bandas elásticas",
+    "description": "Set de 5 resistencias",
+    "currentUnitPrice": 12600.0,
+    "stockQuantity": 195,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0011",
+    "internalCode": "INT-DEP011",
+    "name": "Mochila deportiva",
+    "description": "30 litros impermeable",
+    "currentUnitPrice": 41300.0,
+    "stockQuantity": 185,
+    "isActive": false
+  },
+  {
+    "sku": "DEP-0012",
+    "internalCode": "INT-DEP012",
+    "name": "Zapatillas running",
+    "description": "Suela amortiguada",
+    "currentUnitPrice": 107050.0,
+    "stockQuantity": 180,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0013",
+    "internalCode": "INT-DEP013",
+    "name": "Pelota de básquet",
+    "description": "Tamaño oficial número 7",
+    "currentUnitPrice": 34100.0,
+    "stockQuantity": 120,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0014",
+    "internalCode": "INT-DEP014",
+    "name": "Rodilleras",
+    "description": "Par de neoprene",
+    "currentUnitPrice": 14250.0,
+    "stockQuantity": 160,
+    "isActive": true
+  },
+  {
+    "sku": "DEP-0015",
+    "internalCode": "INT-DEP015",
+    "name": "Carpa 4 personas",
+    "description": "Doble techo impermeable",
+    "currentUnitPrice": 144800.0,
+    "stockQuantity": 185,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0001",
+    "internalCode": "INT-LIB001",
+    "name": "Cuaderno universitario",
+    "description": "A4 rayado, 84 hojas",
+    "currentUnitPrice": 4400.0,
+    "stockQuantity": 180,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0002",
+    "internalCode": "INT-LIB002",
+    "name": "Set de lapiceras",
+    "description": "Pack de 10 colores",
+    "currentUnitPrice": 3600.0,
+    "stockQuantity": 10,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0003",
+    "internalCode": "INT-LIB003",
+    "name": "Agenda 2026",
+    "description": "Semanal, tapa dura",
+    "currentUnitPrice": 11300.0,
+    "stockQuantity": 65,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0004",
+    "internalCode": "INT-LIB004",
+    "name": "Resaltadores",
+    "description": "Pack de 6 colores flúo",
+    "currentUnitPrice": 5150.0,
+    "stockQuantity": 200,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0005",
+    "internalCode": "INT-LIB005",
+    "name": "Mochila escolar",
+    "description": "Con compartimento para notebook",
+    "currentUnitPrice": 52400.0,
+    "stockQuantity": 180,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0006",
+    "internalCode": "INT-LIB006",
+    "name": "Calculadora científica",
+    "description": "240 funciones",
+    "currentUnitPrice": 25700.0,
+    "stockQuantity": 45,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0007",
+    "internalCode": "INT-LIB007",
+    "name": "Carpeta A4",
+    "description": "Tres anillos, tapa plástica",
+    "currentUnitPrice": 5700.0,
+    "stockQuantity": 0,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0008",
+    "internalCode": "INT-LIB008",
+    "name": "Block de hojas",
+    "description": "Cuadriculadas, 96 hojas",
+    "currentUnitPrice": 3650.0,
+    "stockQuantity": 135,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0009",
+    "internalCode": "INT-LIB009",
+    "name": "Lápices de colores",
+    "description": "Caja de 24 unidades",
+    "currentUnitPrice": 8500.0,
+    "stockQuantity": 45,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0010",
+    "internalCode": "INT-LIB010",
+    "name": "Regla metálica",
+    "description": "30 cm de acero",
+    "currentUnitPrice": 2600.0,
+    "stockQuantity": 75,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0011",
+    "internalCode": "INT-LIB011",
+    "name": "Abrochadora",
+    "description": "Capacidad 25 hojas",
+    "currentUnitPrice": 9200.0,
+    "stockQuantity": 80,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0012",
+    "internalCode": "INT-LIB012",
+    "name": "Post-it",
+    "description": "Pack de 5 blocks",
+    "currentUnitPrice": 4300.0,
+    "stockQuantity": 40,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0013",
+    "internalCode": "INT-LIB013",
+    "name": "Cartuchera",
+    "description": "Doble cierre",
+    "currentUnitPrice": 10250.0,
+    "stockQuantity": 100,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0014",
+    "internalCode": "INT-LIB014",
+    "name": "Corrector líquido",
+    "description": "Secado rápido",
+    "currentUnitPrice": 1850.0,
+    "stockQuantity": 45,
+    "isActive": true
+  },
+  {
+    "sku": "LIB-0015",
+    "internalCode": "INT-LIB015",
+    "name": "Marcadores para pizarra",
+    "description": "Pack de 4",
+    "currentUnitPrice": 6250.0,
+    "stockQuantity": 70,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0001",
+    "internalCode": "INT-ALM001",
+    "name": "Yerba mate 1 kg",
+    "description": "Con palo, elaboración tradicional",
+    "currentUnitPrice": 6150.0,
+    "stockQuantity": 140,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0002",
+    "internalCode": "INT-ALM002",
+    "name": "Café molido 500 g",
+    "description": "Tostado intenso",
+    "currentUnitPrice": 10000.0,
+    "stockQuantity": 20,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0003",
+    "internalCode": "INT-ALM003",
+    "name": "Aceite de oliva 500 ml",
+    "description": "Extra virgen",
+    "currentUnitPrice": 10900.0,
+    "stockQuantity": 45,
+    "isActive": false
+  },
+  {
+    "sku": "ALM-0004",
+    "internalCode": "INT-ALM004",
+    "name": "Arroz largo fino 1 kg",
+    "description": "Grano seleccionado",
+    "currentUnitPrice": 2000.0,
+    "stockQuantity": 130,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0005",
+    "internalCode": "INT-ALM005",
+    "name": "Fideos tallarines 500 g",
+    "description": "Sémola de trigo candeal",
+    "currentUnitPrice": 1600.0,
+    "stockQuantity": 185,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0006",
+    "internalCode": "INT-ALM006",
+    "name": "Dulce de leche 400 g",
+    "description": "Clásico repostero",
+    "currentUnitPrice": 3450.0,
+    "stockQuantity": 0,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0007",
+    "internalCode": "INT-ALM007",
+    "name": "Galletitas surtidas",
+    "description": "Paquete de 400 g",
+    "currentUnitPrice": 2800.0,
+    "stockQuantity": 110,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0008",
+    "internalCode": "INT-ALM008",
+    "name": "Azúcar 1 kg",
+    "description": "Refinada",
+    "currentUnitPrice": 1450.0,
+    "stockQuantity": 165,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0009",
+    "internalCode": "INT-ALM009",
+    "name": "Harina 000 1 kg",
+    "description": "De trigo",
+    "currentUnitPrice": 1100.0,
+    "stockQuantity": 165,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0010",
+    "internalCode": "INT-ALM010",
+    "name": "Té en saquitos",
+    "description": "Caja de 50 unidades",
+    "currentUnitPrice": 2500.0,
+    "stockQuantity": 80,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0011",
+    "internalCode": "INT-ALM011",
+    "name": "Mermelada de frutilla",
+    "description": "Frasco de 450 g",
+    "currentUnitPrice": 3250.0,
+    "stockQuantity": 45,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0012",
+    "internalCode": "INT-ALM012",
+    "name": "Atún en lata",
+    "description": "Al natural, 170 g",
+    "currentUnitPrice": 3850.0,
+    "stockQuantity": 160,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0013",
+    "internalCode": "INT-ALM013",
+    "name": "Leche en polvo 800 g",
+    "description": "Entera fortificada",
+    "currentUnitPrice": 13100.0,
+    "stockQuantity": 135,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0014",
+    "internalCode": "INT-ALM014",
+    "name": "Chocolate amargo",
+    "description": "Tableta 70% cacao, 100 g",
+    "currentUnitPrice": 4450.0,
+    "stockQuantity": 130,
+    "isActive": true
+  },
+  {
+    "sku": "ALM-0015",
+    "internalCode": "INT-ALM015",
+    "name": "Miel pura 500 g",
+    "description": "De campo",
+    "currentUnitPrice": 7300.0,
+    "stockQuantity": 35,
+    "isActive": true
+  },
+  {
+    "sku": "JUG-0001",
+    "internalCode": "INT-JUG001",
+    "name": "Rompecabezas 1000 piezas",
+    "description": "Paisaje de montaña",
+    "currentUnitPrice": 17500.0,
+    "stockQuantity": 75,
+    "isActive": true
+  },
+  {
+    "sku": "JUG-0002",
+    "internalCode": "INT-JUG002",
+    "name": "Bloques de construcción",
+    "description": "Caja de 250 piezas",
+    "currentUnitPrice": 27000.0,
+    "stockQuantity": 190,
+    "isActive": true
+  },
+  {
+    "sku": "JUG-0003",
+    "internalCode": "INT-JUG003",
+    "name": "Auto a control remoto",
+    "description": "Escala 1:18 recargable",
+    "currentUnitPrice": 52200.0,
+    "stockQuantity": 35,
+    "isActive": true
+  },
+  {
+    "sku": "JUG-0004",
+    "internalCode": "INT-JUG004",
+    "name": "Muñeca articulada",
+    "description": "Con accesorios",
+    "currentUnitPrice": 23000.0,
+    "stockQuantity": 45,
+    "isActive": true
+  },
+  {
+    "sku": "JUG-0005",
+    "internalCode": "INT-JUG005",
+    "name": "Juego de mesa familiar",
+    "description": "De 2 a 6 jugadores",
+    "currentUnitPrice": 32250.0,
+    "stockQuantity": 55,
+    "isActive": false
+  },
+  {
+    "sku": "JUG-0006",
+    "internalCode": "INT-JUG006",
+    "name": "Pelota saltarina",
+    "description": "Inflable para niños",
+    "currentUnitPrice": 8700.0,
+    "stockQuantity": 200,
+    "isActive": true
+  },
+  {
+    "sku": "JUG-0007",
+    "internalCode": "INT-JUG007",
+    "name": "Peluche oso",
+    "description": "40 cm de altura",
+    "currentUnitPrice": 16200.0,
+    "stockQuantity": 55,
+    "isActive": true
+  },
+  {
+    "sku": "JUG-0008",
+    "internalCode": "INT-JUG008",
+    "name": "Set de plastilinas",
+    "description": "12 colores",
+    "currentUnitPrice": 4900.0,
+    "stockQuantity": 195,
+    "isActive": true
+  },
+  {
+    "sku": "JUG-0009",
+    "internalCode": "INT-JUG009",
+    "name": "Cubo mágico 3x3",
+    "description": "Giro suave",
+    "currentUnitPrice": 7800.0,
+    "stockQuantity": 0,
+    "isActive": true
+  },
+  {
+    "sku": "JUG-0010",
+    "internalCode": "INT-JUG010",
+    "name": "Dominó",
+    "description": "28 fichas en caja de madera",
+    "currentUnitPrice": 9350.0,
+    "stockQuantity": 35,
+    "isActive": true
+  },
+  {
+    "sku": "PER-0001",
+    "internalCode": "INT-PER001",
+    "name": "Secador de pelo",
+    "description": "2000 W con difusor",
+    "currentUnitPrice": 49950.0,
+    "stockQuantity": 185,
+    "isActive": true
+  },
+  {
+    "sku": "PER-0002",
+    "internalCode": "INT-PER002",
+    "name": "Planchita de pelo",
+    "description": "Placas de cerámica",
+    "currentUnitPrice": 45200.0,
+    "stockQuantity": 105,
+    "isActive": true
+  },
+  {
+    "sku": "PER-0003",
+    "internalCode": "INT-PER003",
+    "name": "Afeitadora eléctrica",
+    "description": "Recargable, uso en seco",
+    "currentUnitPrice": 70450.0,
+    "stockQuantity": 70,
+    "isActive": true
+  },
+  {
+    "sku": "PER-0004",
+    "internalCode": "INT-PER004",
+    "name": "Cepillo dental eléctrico",
+    "description": "Con 2 cabezales",
+    "currentUnitPrice": 34350.0,
+    "stockQuantity": 190,
+    "isActive": true
+  },
+  {
+    "sku": "PER-0005",
+    "internalCode": "INT-PER005",
+    "name": "Shampoo 400 ml",
+    "description": "Para todo tipo de cabello",
+    "currentUnitPrice": 4350.0,
+    "stockQuantity": 200,
+    "isActive": true
+  },
+  {
+    "sku": "PER-0006",
+    "internalCode": "INT-PER006",
+    "name": "Protector solar FPS 50",
+    "description": "Envase de 200 ml",
+    "currentUnitPrice": 15700.0,
+    "stockQuantity": 125,
+    "isActive": true
+  },
+  {
+    "sku": "PER-0007",
+    "internalCode": "INT-PER007",
+    "name": "Perfume 100 ml",
+    "description": "Fragancia cítrica",
+    "currentUnitPrice": 75100.0,
+    "stockQuantity": 135,
+    "isActive": true
+  },
+  {
+    "sku": "PER-0008",
+    "internalCode": "INT-PER008",
+    "name": "Crema hidratante",
+    "description": "Uso diario, 250 ml",
+    "currentUnitPrice": 8800.0,
+    "stockQuantity": 90,
+    "isActive": false
+  },
+  {
+    "sku": "PER-0009",
+    "internalCode": "INT-PER009",
+    "name": "Balanza digital",
+    "description": "Hasta 180 kg",
+    "currentUnitPrice": 19750.0,
+    "stockQuantity": 100,
+    "isActive": true
+  },
+  {
+    "sku": "PER-0010",
+    "internalCode": "INT-PER010",
+    "name": "Kit de manicura",
+    "description": "7 piezas con estuche",
+    "currentUnitPrice": 11700.0,
+    "stockQuantity": 85,
+    "isActive": true
+  },
+  {
+    "sku": "JAR-0001",
+    "internalCode": "INT-JAR001",
+    "name": "Manguera 15 m",
+    "description": "Con pico regulable",
+    "currentUnitPrice": 28600.0,
+    "stockQuantity": 200,
+    "isActive": true
+  },
+  {
+    "sku": "JAR-0002",
+    "internalCode": "INT-JAR002",
+    "name": "Set de macetas",
+    "description": "3 macetas de plástico",
+    "currentUnitPrice": 9500.0,
+    "stockQuantity": 15,
+    "isActive": false
+  },
+  {
+    "sku": "JAR-0003",
+    "internalCode": "INT-JAR003",
+    "name": "Tijera de podar",
+    "description": "Hoja de acero",
+    "currentUnitPrice": 15200.0,
+    "stockQuantity": 170,
+    "isActive": true
+  },
+  {
+    "sku": "JAR-0004",
+    "internalCode": "INT-JAR004",
+    "name": "Tierra fértil 10 kg",
+    "description": "Con compost",
+    "currentUnitPrice": 5550.0,
+    "stockQuantity": 185,
+    "isActive": true
+  },
+  {
+    "sku": "JAR-0005",
+    "internalCode": "INT-JAR005",
+    "name": "Regadera 5 litros",
+    "description": "Plástico reforzado",
+    "currentUnitPrice": 7700.0,
+    "stockQuantity": 45,
+    "isActive": true
+  },
+  {
+    "sku": "JAR-0006",
+    "internalCode": "INT-JAR006",
+    "name": "Reposera plegable",
+    "description": "Respaldo reclinable",
+    "currentUnitPrice": 53350.0,
+    "stockQuantity": 200,
+    "isActive": true
+  },
+  {
+    "sku": "JAR-0007",
+    "internalCode": "INT-JAR007",
+    "name": "Parrilla portátil",
+    "description": "Acero con patas plegables",
+    "currentUnitPrice": 82300.0,
+    "stockQuantity": 125,
+    "isActive": true
+  },
+  {
+    "sku": "JAR-0008",
+    "internalCode": "INT-JAR008",
+    "name": "Luces solares",
+    "description": "Pack de 4 estacas LED",
+    "currentUnitPrice": 19200.0,
+    "stockQuantity": 110,
+    "isActive": true
+  },
+  {
+    "sku": "JAR-0009",
+    "internalCode": "INT-JAR009",
+    "name": "Guantes de jardinería",
+    "description": "Con puntas reforzadas",
+    "currentUnitPrice": 5250.0,
+    "stockQuantity": 25,
+    "isActive": true
+  },
+  {
+    "sku": "JAR-0010",
+    "internalCode": "INT-JAR010",
+    "name": "Semillas de huerta",
+    "description": "Pack de 10 variedades",
+    "currentUnitPrice": 5800.0,
+    "stockQuantity": 90,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0001",
+    "internalCode": "INT-MAS001",
+    "name": "Alimento perro 15 kg",
+    "description": "Adulto raza mediana",
+    "currentUnitPrice": 67100.0,
+    "stockQuantity": 30,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0002",
+    "internalCode": "INT-MAS002",
+    "name": "Alimento gato 7.5 kg",
+    "description": "Adulto sabor pescado",
+    "currentUnitPrice": 47300.0,
+    "stockQuantity": 165,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0003",
+    "internalCode": "INT-MAS003",
+    "name": "Cama para mascota",
+    "description": "Tamaño mediano lavable",
+    "currentUnitPrice": 26300.0,
+    "stockQuantity": 170,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0004",
+    "internalCode": "INT-MAS004",
+    "name": "Correa extensible",
+    "description": "Hasta 5 metros",
+    "currentUnitPrice": 14250.0,
+    "stockQuantity": 25,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0005",
+    "internalCode": "INT-MAS005",
+    "name": "Rascador para gato",
+    "description": "Con plataforma, 60 cm",
+    "currentUnitPrice": 40700.0,
+    "stockQuantity": 105,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0006",
+    "internalCode": "INT-MAS006",
+    "name": "Comedero doble",
+    "description": "Acero inoxidable",
+    "currentUnitPrice": 7450.0,
+    "stockQuantity": 165,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0007",
+    "internalCode": "INT-MAS007",
+    "name": "Juguete mordedor",
+    "description": "Goma resistente",
+    "currentUnitPrice": 5150.0,
+    "stockQuantity": 40,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0008",
+    "internalCode": "INT-MAS008",
+    "name": "Piedras sanitarias 4 kg",
+    "description": "Aglomerantes",
+    "currentUnitPrice": 7900.0,
+    "stockQuantity": 145,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0009",
+    "internalCode": "INT-MAS009",
+    "name": "Transportadora",
+    "description": "Para mascotas de hasta 10 kg",
+    "currentUnitPrice": 44550.0,
+    "stockQuantity": 35,
+    "isActive": true
+  },
+  {
+    "sku": "MAS-0010",
+    "internalCode": "INT-MAS010",
+    "name": "Collar ajustable",
+    "description": "Con hebilla de seguridad",
+    "currentUnitPrice": 5900.0,
+    "stockQuantity": 80,
+    "isActive": true
+  }
+]
