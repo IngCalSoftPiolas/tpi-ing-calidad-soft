@@ -19,9 +19,9 @@ jobs:
             exit 0
           fi
           
-          if [[ ! $BRANCH_NAME =~ ^(feature|hotfix)/ ]]; then
+          if [[ ! $BRANCH_NAME =~ ^(feature|hotfix|test)/ ]]; then
             echo "Error: La rama '$BRANCH_NAME' no es válida."
-            echo "Debe empezar obligatoriamente con feature/ o hotfix/"
+            echo "Debe empezar obligatoriamente con feature/, hotfix/ o test/"
             exit 1
           fi
           echo "El nombre de la rama es válido."

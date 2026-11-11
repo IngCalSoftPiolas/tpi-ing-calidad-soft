@@ -154,9 +154,10 @@ public class Program
         });
 
         var app = builder.Build();
-        //Agrego los clientes y productos a la db
-        using (var scope = app.Services.CreateScope())
+        //Agrego los clientes y productos a la db (en Testing cada prueba siembra sus propios datos)
+        if (!app.Environment.IsEnvironment("Testing"))
         {
+            using var scope = app.Services.CreateScope();
             var context = scope.ServiceProvider.GetRequiredService<Dsw2025TpiContext>();
             context.Seedwork<Customer>("Resources/clients.json");
             context.Seedwork<Product>("Resources/products.json");
