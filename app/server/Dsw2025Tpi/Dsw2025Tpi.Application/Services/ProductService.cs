@@ -103,7 +103,7 @@ namespace Dsw2025Tpi.Application.Services
             await _repository.Update(product);
         }
 
-        public async Task<ProductModelResponsePagination?> GetProducts(ProductFilterProduct request)
+        public async Task<ProductModelResponsePagination> GetProducts(ProductFilterProduct request)
         {
             var isActive = request.Status == "enabled"
                 ? (bool?)true
@@ -111,19 +111,23 @@ namespace Dsw2025Tpi.Application.Services
                     ? (bool?)false
                     : null;
 
+            var search = request.Search?.Trim();
+
             var activeProducts = await _repository.GetFiltered<Product>(
                 p => (isActive == null || p.IsActive == isActive)
-                && (string.IsNullOrEmpty(request.Search) || p.Name.Contains(request.Search))
+                && (string.IsNullOrEmpty(search) 
+                    || (p.Name != null && p.Name.Contains(search, StringComparison.OrdinalIgnoreCase))
+                    || (p.Sku != null && p.Sku.Contains(search, StringComparison.OrdinalIgnoreCase))
+                    || (p.InternalCode != null && p.InternalCode.Contains(search, StringComparison.OrdinalIgnoreCase)))
             );
-                if (activeProducts is null || !activeProducts.Any()) {
-                throw new NotFoundException("No hay productos que coincidan con el filtro.");
-            }
-                var products = activeProducts.Select(p => ResponseGenerator(p))
+
+            var products = (activeProducts ?? Enumerable.Empty<Product>())
+                .Select(p => ResponseGenerator(p))
                 .OrderBy(p => p.Sku)
-                .Skip((request.PageNumber - 1) * request.PageSize ?? 0)
-                .Take(request.PageSize ?? activeProducts.Count())
-                ;
-            return new ProductModelResponsePagination(products.ToList(), activeProducts.Count());
+                .Skip((request.PageNumber.GetValueOrDefault(1) - 1) * request.PageSize.GetValueOrDefault(activeProducts?.Count() ?? 0))
+                .Take(request.PageSize ?? (activeProducts?.Count() ?? 0));
+
+            return new ProductModelResponsePagination(products.ToList(), activeProducts?.Count() ?? 0);
         }
 
     }
