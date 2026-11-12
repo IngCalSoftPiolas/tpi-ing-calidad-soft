@@ -65,10 +65,10 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(2);
-        result.TotalCount.Should().Be(2);
-        result.Products.Should().AllSatisfy(p => p.status.Should().Be("active"));
-        result.Products.Select(p => p.Sku).Should().BeEquivalentTo(new[] { "SKU-001", "SKU-002" });
+        result.ProductItems.Should().HaveCount(2);
+        result.TotalItems.Should().Be(2);
+        result.ProductItems.Should().AllSatisfy(p => p.status.Should().Be("active"));
+        result.ProductItems.Select(p => p.Sku).Should().BeEquivalentTo(new[] { "SKU-001", "SKU-002" });
     }
 
     [Fact]
@@ -92,13 +92,13 @@ public class GetProductsTests
         );
 
         // Act
-        var result = await _service.GetProducts(request);
+        var result = await _service.GetProducts(request, includeInactive: true);
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(2);
-        result.TotalCount.Should().Be(2);
-        result.Products.Should().AllSatisfy(p => p.status.Should().Be("disabled"));
+        result.ProductItems.Should().HaveCount(2);
+        result.TotalItems.Should().Be(2);
+        result.ProductItems.Should().AllSatisfy(p => p.status.Should().Be("disabled"));
     }
 
     [Fact]
@@ -121,12 +121,12 @@ public class GetProductsTests
         );
 
         // Act
-        var result = await _service.GetProducts(request);
+        var result = await _service.GetProducts(request, includeInactive: true);
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(2);
-        result.TotalCount.Should().Be(2);
+        result.ProductItems.Should().HaveCount(2);
+        result.TotalItems.Should().Be(2);
     }
 
     [Fact]
@@ -151,9 +151,9 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(5);
-        result.TotalCount.Should().Be(15);
-        result.Products.Select(p => p.Sku).Should().BeEquivalentTo(new[] { "SKU-006", "SKU-007", "SKU-008", "SKU-009", "SKU-010" });
+        result.ProductItems.Should().HaveCount(5);
+        result.TotalItems.Should().Be(15);
+        result.ProductItems.Select(p => p.Sku).Should().BeEquivalentTo(new[] { "SKU-006", "SKU-007", "SKU-008", "SKU-009", "SKU-010" });
     }
 
     [Fact]
@@ -178,9 +178,9 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(3);
-        result.TotalCount.Should().Be(10);
-        result.Products.Select(p => p.Sku).Should().BeEquivalentTo(new[] { "SKU-001", "SKU-002", "SKU-003" });
+        result.ProductItems.Should().HaveCount(3);
+        result.TotalItems.Should().Be(10);
+        result.ProductItems.Select(p => p.Sku).Should().BeEquivalentTo(new[] { "SKU-001", "SKU-002", "SKU-003" });
     }
 
     [Fact]
@@ -209,9 +209,9 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(2);
-        result.TotalCount.Should().Be(2);
-        result.Products.Select(p => p.Name).Should().Contain(new[] { "Mouse Gamer", "Mouse Inalámbrico" });
+        result.ProductItems.Should().HaveCount(2);
+        result.TotalItems.Should().Be(2);
+        result.ProductItems.Select(p => p.Name).Should().Contain(new[] { "Mouse Gamer", "Mouse Inalámbrico" });
     }
 
     [Fact]
@@ -239,8 +239,8 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(2);
-        result.Products.Select(p => p.Sku).Should().Contain(new[] { "SKU-MOUSE-01", "MOUSE-SKU-02" });
+        result.ProductItems.Should().HaveCount(2);
+        result.ProductItems.Select(p => p.Sku).Should().Contain(new[] { "SKU-MOUSE-01", "MOUSE-SKU-02" });
     }
 
     [Fact]
@@ -268,8 +268,8 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(2);
-        result.Products.Select(p => p.InternalCode).Should().Contain(new[] { "INT-MOUSE-01", "MOUSE-INT-02" });
+        result.ProductItems.Should().HaveCount(2);
+        result.ProductItems.Select(p => p.InternalCode).Should().Contain(new[] { "INT-MOUSE-01", "MOUSE-INT-02" });
     }
 
     [Fact]
@@ -297,10 +297,10 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(1);
-        result.TotalCount.Should().Be(1);
-        result.Products.First().Sku.Should().Be("SKU-001");
-        result.Products.First().status.Should().Be("active");
+        result.ProductItems.Should().HaveCount(1);
+        result.TotalItems.Should().Be(1);
+        result.ProductItems.First().Sku.Should().Be("SKU-001");
+        result.ProductItems.First().status.Should().Be("active");
     }
 
     [Fact]
@@ -327,8 +327,8 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().BeEmpty();
-        result.TotalCount.Should().Be(0);
+        result.ProductItems.Should().BeEmpty();
+        result.TotalItems.Should().Be(0);
     }
 
     [Fact]
@@ -349,8 +349,8 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().BeEmpty();
-        result.TotalCount.Should().Be(0);
+        result.ProductItems.Should().BeEmpty();
+        result.TotalItems.Should().Be(0);
     }
 
     [Fact]
@@ -375,7 +375,7 @@ public class GetProductsTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Products.Should().HaveCount(20);
-        result.TotalCount.Should().Be(20);
+        result.ProductItems.Should().HaveCount(20);
+        result.TotalItems.Should().Be(20);
     }
 }

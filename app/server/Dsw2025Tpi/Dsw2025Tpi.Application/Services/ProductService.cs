@@ -103,31 +103,37 @@ namespace Dsw2025Tpi.Application.Services
             await _repository.Update(product);
         }
 
-        public async Task<ProductModelResponsePagination> GetProducts(ProductFilterProduct request)
+        public async Task<ProductModelResponsePagination> GetProducts(ProductFilterProduct request, bool includeInactive = false)
         {
-            var isActive = request.Status == "enabled"
+            // El catálogo público solo expone productos activos; el listado
+            // administrativo puede incluir inactivos y filtrarlos por status.
+            var isActive = !includeInactive
                 ? (bool?)true
-                : request.Status == "disabled"
-                    ? (bool?)false
-                    : null;
+                : request.Status == "enabled"
+                    ? (bool?)true
+                    : request.Status == "disabled"
+                        ? (bool?)false
+                        : null;
 
-            var search = request.Search?.Trim();
+            // ToLower permite que el filtro sea traducible tanto por SQL Server
+            // como por SQLite (Contains con StringComparison no lo es).
+            var search = (request.Search ?? string.Empty).Trim().ToLowerInvariant();
 
-            var activeProducts = await _repository.GetFiltered<Product>(
+            var filteredProducts = await _repository.GetFiltered<Product>(
                 p => (isActive == null || p.IsActive == isActive)
                 && (string.IsNullOrEmpty(search) 
-                    || (p.Name != null && p.Name.Contains(search, StringComparison.OrdinalIgnoreCase))
-                    || (p.Sku != null && p.Sku.Contains(search, StringComparison.OrdinalIgnoreCase))
-                    || (p.InternalCode != null && p.InternalCode.Contains(search, StringComparison.OrdinalIgnoreCase)))
+                    || (p.Name != null && p.Name.ToLower().Contains(search))
+                    || (p.Sku != null && p.Sku.ToLower().Contains(search))
+                    || (p.InternalCode != null && p.InternalCode.ToLower().Contains(search)))
             );
 
-            var products = (activeProducts ?? Enumerable.Empty<Product>())
+            var products = (filteredProducts ?? Enumerable.Empty<Product>())
                 .Select(p => ResponseGenerator(p))
                 .OrderBy(p => p.Sku)
-                .Skip((request.PageNumber.GetValueOrDefault(1) - 1) * request.PageSize.GetValueOrDefault(activeProducts?.Count() ?? 0))
-                .Take(request.PageSize ?? (activeProducts?.Count() ?? 0));
+                .Skip((request.PageNumber.GetValueOrDefault(1) - 1) * request.PageSize.GetValueOrDefault(filteredProducts?.Count() ?? 0))
+                .Take(request.PageSize ?? (filteredProducts?.Count() ?? 0));
 
-            return new ProductModelResponsePagination(products.ToList(), activeProducts?.Count() ?? 0);
+            return new ProductModelResponsePagination(products.ToList(), filteredProducts?.Count() ?? 0);
         }
 
     }

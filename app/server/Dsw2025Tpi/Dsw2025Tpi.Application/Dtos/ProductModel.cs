@@ -59,8 +59,8 @@ namespace Dsw2025Tpi.Application.Dtos
             );
 
         public record ProductModelResponsePagination(
-                List<ProductModelResponse> Products,
-                int TotalCount
+                List<ProductModelResponse> ProductItems,
+                int TotalItems
             );
         
         public record ProductFilterProduct(
