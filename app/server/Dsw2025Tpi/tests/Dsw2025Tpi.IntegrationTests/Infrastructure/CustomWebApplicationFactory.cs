@@ -38,6 +38,7 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
         builder.UseSetting("Jwt:Key", JwtKey);
         builder.UseSetting("Jwt:Issuer", JwtIssuer);
         builder.UseSetting("Jwt:Audience", JwtAudience);
+        builder.UseSetting("Jwt:ExpireInMinutes", "60");
 
         builder.ConfigureServices(services =>
         {

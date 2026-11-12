@@ -9,6 +9,6 @@ namespace Dsw2025Tpi.Application.Services.Interfaces
         Task<ProductModelResponse> GetProductByIdAsync(Guid id);
         Task<IEnumerable<ProductModelResponse>> GetAllProductsAsync();
         Task<ProductModelResponse> UpdateProductsAsync(Guid id, ProductModelUpdateRequest r);
-        Task<ProductModelResponsePagination?> GetProducts(ProductFilterProduct request);
+        Task<ProductModelResponsePagination?> GetProducts(ProductFilterProduct request, bool includeInactive = false);
     }
 }
