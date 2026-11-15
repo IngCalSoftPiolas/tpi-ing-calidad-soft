@@ -14,6 +14,7 @@ namespace Dsw2025Tpi.Domain.Entities
             this.UnitPrice = product.CurrentUnitPrice;
             this.Quantity = quantity;
             this.ProductId = product.Id;
+            this.Product = product;
         }
         public int Quantity { get; set; }
         public decimal? UnitPrice { get; private set; }
