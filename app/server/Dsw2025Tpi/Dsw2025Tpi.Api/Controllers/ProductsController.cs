@@ -30,7 +30,7 @@ namespace Dsw2025Tpi.Api.Controllers
                 return CreatedAtAction(nameof(GetProductById), new { id = product.ProductId }, product);
             }
             catch (DuplicatedItemException ex) { 
-                return BadRequest(ex.Message);
+                return Conflict(new { error = ex.Message });
             }
             
         }
