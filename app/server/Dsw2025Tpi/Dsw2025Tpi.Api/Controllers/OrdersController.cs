@@ -35,7 +35,7 @@ namespace Dsw2025Tpi.Api.Controllers
                 return NotFound(ex.Message);
             }
             catch (InsufficientStockException ex) { 
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
             }
             catch(InactiveProductException ex)
             {
