@@ -48,11 +48,11 @@ namespace Dsw2025Tpi.Api.Controllers
             
         }
         [HttpGet]
-        [Authorize( Roles = "Master, Admin, Client")]
-        public async Task<IActionResult> GetAllProductsAsync()
+        [AllowAnonymous]
+        public async Task<IActionResult> GetAllProductsAsync([FromQuery] ProductFilterProduct request)
         {
-            var products = await _productService.GetAllProductsAsync();
-            if (products == null || !products.Any())
+            var products = await _productService.GetProducts(request);
+            if (products == null || products.ProductItems.Count == 0)
             {
                 return NoContent();
             }
@@ -93,20 +93,11 @@ namespace Dsw2025Tpi.Api.Controllers
             }
         }
         [HttpGet("admin")]
-        [AllowAnonymous]
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAuthProducts([FromQuery] ProductFilterProduct request)
         {
-            try
-            {
-                var products = await _productService.GetProducts(request);
-                return Ok(products);
-                
-            }
-            catch (Exception ex)
-            {
-                return NotFound(ex.Message);
-            }
+            var products = await _productService.GetProducts(request, includeInactive: true);
+            return Ok(products);
         }
     }
 }
