@@ -20,7 +20,7 @@ namespace Dsw2025Tpi.Application.Services
         public ProductService(IRepository repository)
         {
             _repository = repository;
-        }  
+        }
         //Creacion de productos
         private Product ProductGenerator(ProductModelRequest r)
         {
@@ -54,9 +54,15 @@ namespace Dsw2025Tpi.Application.Services
         //Adicion de productos
         public async Task<ProductModelResponse> CreateProductAsync(ProductModelRequest r)
         {
+            //Validamos los datos numericos antes de consultar el repositorio
+            if (r.StockQuantity <= 0)
+                throw new InvalidDataException("El stock debe ser mayor a 0.");
+            if (r.CurrentUnitPrice < 0)
+                throw new InvalidDataException("El precio no puede ser negativo.");
+
             var product = ProductGenerator(r);
             //Revisamos que no haya un producto con el mismo sku antes
-            if (! (await _repository.First<Product>(p =>p.Sku == product.Sku) is null))
+            if (!(await _repository.First<Product>(p => p.Sku == product.Sku) is null))
                 throw new DuplicatedItemException("Un producto con ese SKU ya existe.");
             //Añadimos el producto a la base de datos
             var response = await _repository.Add(product);
@@ -121,7 +127,7 @@ namespace Dsw2025Tpi.Application.Services
 
             var filteredProducts = await _repository.GetFiltered<Product>(
                 p => (isActive == null || p.IsActive == isActive)
-                && (string.IsNullOrEmpty(search) 
+                && (string.IsNullOrEmpty(search)
                     || (p.Name != null && p.Name.ToLower().Contains(search))
                     || (p.Sku != null && p.Sku.ToLower().Contains(search))
                     || (p.InternalCode != null && p.InternalCode.ToLower().Contains(search)))

@@ -29,23 +29,30 @@ namespace Dsw2025Tpi.Api.Controllers
                 var product = await _productService.CreateProductAsync(request);
                 return CreatedAtAction(nameof(GetProductById), new { id = product.ProductId }, product);
             }
-            catch (DuplicatedItemException ex) { 
+            catch (DuplicatedItemException ex)
+            {
                 return Conflict(new { error = ex.Message });
             }
-            
+            catch (InvalidDataException ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+
         }
         [HttpGet("{id}")]
         [Authorize(Roles = "Master, Admin, Client")]
         public async Task<IActionResult> GetProductById(Guid id)
         {
-            try {
+            try
+            {
                 var product = await _productService.GetProductByIdAsync(id);
                 return Ok(product);
             }
-            catch (NotFoundException ex) {
+            catch (NotFoundException ex)
+            {
                 return NotFound(ex.Message);
             }
-            
+
         }
         [HttpGet]
         [AllowAnonymous]
@@ -72,11 +79,11 @@ namespace Dsw2025Tpi.Api.Controllers
 
                 return NotFound(ex.Message);
             }
-           
+
         }
         [HttpPut("{id}")]
         [Authorize(Roles = "Master, Admin")]
-        public async Task<IActionResult> UpdateProduct(Guid id,[FromBody] ProductModelUpdateRequest request)
+        public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] ProductModelUpdateRequest request)
         {
             try
             {
