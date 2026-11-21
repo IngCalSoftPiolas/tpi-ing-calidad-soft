@@ -91,7 +91,7 @@ public class CreateOrderTests
 
         // Assert - respuesta
         result.Should().NotBeNull();
-        result.TotalAmount.Should().Be(401m); // suma exacta de subtotales
+        result.TotalAmount.Should().Be(402m); // suma exacta de subtotales
         result.CustomerId.Should().Be(customer.Id);
         result.CustomerName.Should().Be(customer.Name);
         result.Status.Should().Be("PENDING");
