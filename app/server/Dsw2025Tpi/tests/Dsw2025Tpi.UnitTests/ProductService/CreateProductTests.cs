@@ -20,7 +20,7 @@ public class CreateProductTests
     }
 
     [Fact]
-    public async Task CreateProductAsync_ValidRequest_ReturnsProductModelResponse()
+    public async Task AddProduct_WithValidData_ReturnsProductAndCallsRepositoryAdd()
     {
         // Arrange
         var request = new ProductModelRequest(
@@ -65,7 +65,7 @@ public class CreateProductTests
     }
 
     [Fact]
-    public async Task CreateProductAsync_DuplicateSku_ThrowsDuplicatedItemException()
+    public async Task AddProduct_WithDuplicateSku_ThrowsDuplicatedEntityException()
     {
         // Arrange
         var request = new ProductModelRequest(
@@ -95,7 +95,7 @@ public class CreateProductTests
     }
 
     [Fact]
-    public async Task CreateProductAsync_EmptySku_CreatesProductWithEmptySku()
+    public async Task AddProduct_WithEmptySku_CreatesProductWithEmptySku()
     {
         // Arrange: El service no valida el SKU, eso lo hace el controller
         var request = new ProductModelRequest(
@@ -130,111 +130,31 @@ public class CreateProductTests
         result.Sku.Should().Be("");
     }
 
-    [Fact]
-    public async Task CreateProductAsync_NegativePrice_CreatesProductWithNegativePrice()
-    {
-        // Arrange: El service no valida el precio, eso lo hace el controller
-        var request = new ProductModelRequest(
-            Sku: "TEST-002",
-            InternalCode: "INT-TEST002",
-            Name: "Producto Test",
-            Description: "Descripción",
-            CurrentUnitPrice: -10m,
-            StockQuantity: 10
-        );
-
-        var createdProduct = new Product(request.Sku, request.Name, request.CurrentUnitPrice, request.StockQuantity)
-        {
-            InternalCode = request.InternalCode,
-            Description = request.Description,
-            IsActive = true
-        };
-
-        _repositoryMock
-            .Setup(r => r.First<Product>(It.IsAny<System.Linq.Expressions.Expression<Func<Product, bool>>>(), It.IsAny<string[]>()))
-            .ReturnsAsync((Product?)null);
-
-        _repositoryMock
-            .Setup(r => r.Add(It.IsAny<Product>()))
-            .ReturnsAsync(createdProduct);
-
-        // Act
-        var result = await _service.CreateProductAsync(request);
-
-        // Assert: El service crea el producto sin validar (la validación es en el controller)
-        result.Should().NotBeNull();
-        result.CurrentUnitPrice.Should().Be(-10m);
-    }
-
-    [Fact]
-    public async Task CreateProductAsync_NegativeStock_CreatesProductWithNegativeStock()
-    {
-        // Arrange: El service no valida el stock, eso lo hace el controller
-        var request = new ProductModelRequest(
-            Sku: "TEST-003",
-            InternalCode: "INT-TEST003",
-            Name: "Producto Test",
-            Description: "Descripción",
-            CurrentUnitPrice: 100.50m,
-            StockQuantity: -5
-        );
-
-        var createdProduct = new Product(request.Sku, request.Name, request.CurrentUnitPrice, request.StockQuantity)
-        {
-            InternalCode = request.InternalCode,
-            Description = request.Description,
-            IsActive = true
-        };
-
-        _repositoryMock
-            .Setup(r => r.First<Product>(It.IsAny<System.Linq.Expressions.Expression<Func<Product, bool>>>(), It.IsAny<string[]>()))
-            .ReturnsAsync((Product?)null);
-
-        _repositoryMock
-            .Setup(r => r.Add(It.IsAny<Product>()))
-            .ReturnsAsync(createdProduct);
-
-        // Act
-        var result = await _service.CreateProductAsync(request);
-
-        // Assert: El service crea el producto sin validar (la validación es en el controller)
-        result.Should().NotBeNull();
-        result.StockQuantity.Should().Be(-5);
-    }
-
-    [Fact]
-    public async Task CreateProductAsync_MissingOptionalFields_ProductIsInactive()
+    [Theory]
+    [InlineData(0, 100.0)]   // stock en cero
+    [InlineData(-5, 100.0)]  // stock negativo
+    [InlineData(10, -10.0)]  // precio negativo
+    public async Task AddProduct_WithInvalidStockOrPrice_ThrowsInvalidDataException(int stock, double price)
     {
         // Arrange
         var request = new ProductModelRequest(
-            Sku: "TEST-004",
-            InternalCode: null,
-            Name: null,
-            Description: null,
-            CurrentUnitPrice: null,
-            StockQuantity: null
+            Sku: "TEST-INV",
+            InternalCode: "INT-INV",
+            Name: "Producto Invalido",
+            Description: "Descripción",
+            CurrentUnitPrice: (decimal)price,
+            StockQuantity: stock
         );
 
-        var createdProduct = new Product(request.Sku, request.Name, request.CurrentUnitPrice, request.StockQuantity)
-        {
-            InternalCode = request.InternalCode,
-            Description = request.Description,
-            IsActive = false
-        };
-
-        _repositoryMock
-            .Setup(r => r.First<Product>(It.IsAny<System.Linq.Expressions.Expression<Func<Product, bool>>>(), It.IsAny<string[]>()))
-            .ReturnsAsync((Product?)null);
-
-        _repositoryMock
-            .Setup(r => r.Add(It.IsAny<Product>()))
-            .ReturnsAsync(createdProduct);
-
         // Act
-        var result = await _service.CreateProductAsync(request);
+        var act = async () => await _service.CreateProductAsync(request);
 
-        // Assert
-        result.Should().NotBeNull();
-        result.status.Should().Be("disabled");
+        // Assert: se lanza el error con su mensaje antes de usar el repositorio
+        var exception = await act.Should().ThrowAsync<InvalidDataException>();
+        exception.Which.Message.Should().NotBeNullOrWhiteSpace();
+
+        _repositoryMock.Verify(r => r.First<Product>(It.IsAny<System.Linq.Expressions.Expression<Func<Product, bool>>>(), It.IsAny<string[]>()), Times.Never);
+        _repositoryMock.Verify(r => r.Add(It.IsAny<Product>()), Times.Never);
+        _repositoryMock.VerifyNoOtherCalls();
     }
 }
